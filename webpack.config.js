@@ -102,6 +102,11 @@ module.exports = {
         use: [{ loader: 'file-loader?name=images/[name].[ext]&context=./src/images' }]
       },
       {
+        test: /\.(csv|md)$/,
+        exclude: /node_modules/,
+        use: [{ loader: 'raw-loader', options: { esModule: false }}]
+      },
+      {
         test: require.resolve('jquery'),
         use: [{ loader: 'expose-loader', options: 'jQuery' }, { loader: 'expose-loader', options: '$' }]
       }

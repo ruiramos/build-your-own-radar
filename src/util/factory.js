@@ -158,6 +158,11 @@ const CSVDocument = function (url) {
     d3.csv(url).then(createBlips)
   }
 
+  self.buildFromString = function(csv){
+    var data = d3.csvParse(csv)
+    createBlips(data)
+  }
+
   var createBlips = function (data) {
     try {
       var columnNames = data.columns
@@ -199,6 +204,11 @@ const FileName = function (url) {
 const GoogleSheetInput = function () {
   var self = {}
   var sheet
+
+  self.buildFromString = function(data, title){
+    sheet = CSVDocument(title)
+    sheet.init().buildFromString(data)
+  }
 
   self.build = function () {
     var domainName = DomainName(window.location.search.substring(1))
