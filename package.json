@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "istanbul cover jasmine",
-    "lint": "prettier",
+    "lint": "prettier src/**/*.js --write",
     "dev": "webpack-dev-server --mode development --inline",
     "build": "webpack --mode production",
     "end_to_end_test": "node_modules/.bin/cypress run --env host=$TEST_URL",
