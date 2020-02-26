@@ -69,20 +69,5 @@
   },
   "peerDependencies": {
     "mocha": "*"
-  },
-  "standard": {
-    "globals": [
-      "Cypress",
-      "cy",
-      "XMLHttpRequest"
-    ],
-    "env": [
-      "jasmine",
-      "mocha"
-    ],
-    "ignore": [
-      "radar-spec.js",
-      "ref-table-spec.js"
-    ]
   }
 }
